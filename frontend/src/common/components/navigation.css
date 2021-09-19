@@ -1,0 +1,26 @@
+nav {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+
+nav ul li:nth-child(2) {
+  color: blueviolet;
+}
+
+nav ul li {
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: #f57224;
+}

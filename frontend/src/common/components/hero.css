@@ -1,0 +1,42 @@
+.hero {
+  background-color: red;
+  height: 34.3rem;
+  margin-top: 2.5rem;
+}
+
+.caroseul-wrapper {
+  background-color: white;
+  height: 100%;
+  display: flex;
+}
+
+.caroseul-wrapper .catalog {
+  flex: 0 0 var(--logo-wrapper-size);
+}
+
+.caroseul img {
+  max-width: 100%;
+}
+
+.caroseul-wrapper ul {
+  padding-top: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brand-item {
+  padding-right: 2rem;
+}
+
+.brand-item .brand-link {
+  border-right: 2px solid #f1e9e963;
+  display: block;
+  text-decoration: none;
+}
+
+.brand-item:last-child .brand-link {
+  border: 0;
+}
