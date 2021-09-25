@@ -1,0 +1,79 @@
+.product-card-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 3rem;
+}
+
+.product-card {
+  max-width: 100%;
+  background-color: white;
+  cursor: pointer;
+  height: 34rem;
+  padding-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.product-card img {
+  max-width: 100%;
+}
+
+.product-card .prod-name {
+  color: var(--text-black);
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.prod-info {
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.pagination-btn {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  width: 46rem;
+  border: 1px solid #1a9cb8;
+  color: #1a9cb8;
+  background-color: transparent;
+  margin: 5rem auto 0 auto;
+  font-weight: 600;
+  font-size: 1.4rem;
+  display: block;
+  cursor: pointer;
+}
+/**
+Star Button
+**/
+
+.star-section {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1px;
+  margin-top: auto;
+  font-size: 1.6rem;
+}
+
+.star-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.star-icon.full-star {
+  color: #faca51;
+}
+
+.star-icon.empty-star {
+  color: #dadada;
+}

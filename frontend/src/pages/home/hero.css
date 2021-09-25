@@ -1,0 +1,66 @@
+.hero {
+  background-color: red;
+  height: 34.3rem;
+  transition: background-color 0.5s;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.caroseul-wrapper {
+  background-color: white;
+  height: 100%;
+  display: flex;
+}
+
+.caroseul-wrapper .catalog {
+  flex: 0 0 var(--logo-wrapper-size);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.caroseul {
+  position: relative;
+}
+
+.caroseul img {
+  max-width: 100%;
+  transition: opacity 0.5s;
+}
+
+.catalog ul {
+  padding-top: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brand-item {
+  padding-right: 2rem;
+}
+
+.brand-item .brand-link {
+  border-right: 2px solid #f1e9e963;
+  display: block;
+  text-decoration: none;
+}
+
+.brand-item:last-child .brand-link {
+  border: 0;
+}
+
+.caroseul-nav li {
+  width: 1rem;
+  height: 1rem;
+  background-color: #ddd;
+  border-radius: 1rem;
+}
+
+.caroseul-nav {
+  display: flex;
+  flex: 0 0 1rem;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  gap: 1rem;
+  transform: translate(-50%, 0);
+}

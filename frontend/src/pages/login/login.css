@@ -1,0 +1,38 @@
+.login-page {
+  height: 60rem;
+  width: 100%;
+  display: block;
+  padding-top: 4rem;
+}
+
+.title-box {
+  margin: auto;
+  width: 85rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.login-page .login-form {
+  margin: 2rem auto;
+  width: 85rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 4rem 6rem 6rem 2rem;
+}
+
+.login-page .right-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1.4rem;
+  gap: 1.2rem;
+}
+
+.login-page .left-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40rem;
+}

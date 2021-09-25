@@ -1,0 +1,47 @@
+.signup-page {
+  height: 60rem;
+  width: 100%;
+  display: block;
+  padding-top: 4rem;
+}
+
+.signup-page .title-box {
+  margin: auto;
+  width: 85rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.signup-page .login-form {
+  margin: 2rem auto;
+  width: 85rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 4rem 6rem 6rem 2rem;
+}
+
+.signup-page .right-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 30rem;
+  padding-top: 1.4rem;
+}
+.signup-page .left-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 40rem;
+}
+
+.signup-page .fb-btn {
+  width: 48%;
+  display: inline;
+}
+
+.signup-page .google-btn {
+  width: 48%;
+  float: right;
+}
