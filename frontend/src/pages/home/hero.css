@@ -1,7 +1,8 @@
 .hero {
   background-color: red;
   height: 34.3rem;
-  margin-top: 2.5rem;
+  transition: background-color 0.5s;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .caroseul-wrapper {
@@ -12,13 +13,19 @@
 
 .caroseul-wrapper .catalog {
   flex: 0 0 var(--logo-wrapper-size);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.caroseul {
+  position: relative;
 }
 
 .caroseul img {
   max-width: 100%;
+  transition: opacity 0.5s;
 }
 
-.caroseul-wrapper ul {
+.catalog ul {
   padding-top: 2rem;
   padding-left: 0.5rem;
   font-size: 1.4rem;
@@ -39,4 +46,21 @@
 
 .brand-item:last-child .brand-link {
   border: 0;
+}
+
+.caroseul-nav li {
+  width: 1rem;
+  height: 1rem;
+  background-color: #ddd;
+  border-radius: 1rem;
+}
+
+.caroseul-nav {
+  display: flex;
+  flex: 0 0 1rem;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  gap: 1rem;
+  transform: translate(-50%, 0);
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../asset/lazada-logo.png";
 import "./search.css";
+import { Link } from "react-router-dom";
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -14,8 +15,9 @@ class SearchBox extends React.Component {
   }
 
   onSearchInputFocus() {
+    //todo history dialog will develop later
     this.setState((currentState) => ({
-      isSearchHistoryOpen: true,
+      isSearchHistoryOpen: false,
     }));
   }
   onSearchInputBlur() {
@@ -28,7 +30,9 @@ class SearchBox extends React.Component {
     return (
       <section className="search-bar header-content">
         <div className="logo-wrapper">
-          <img className="logo" alt="Lazada logo" src={logo} />
+          <Link to="/">
+            <img className="logo" alt="Lazada logo" src={logo} />
+          </Link>
         </div>
         <div className="search-form-cart-wrapper">
           <form autoComplete="off">
