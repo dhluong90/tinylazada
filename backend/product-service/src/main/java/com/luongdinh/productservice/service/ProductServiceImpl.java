@@ -8,21 +8,21 @@ import com.luongdinh.productservice.repository.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
     
-    public List<ProductListResponse.Product> getProductsByPage(Pageable pageable) {
-        Page<Product> productPage = productRepository.findAll(pageable);
-        return null;
+    public Page<ProductListResponse.Product> getProductsByPage(PageRequest pageRequest) {
+        Page<Product> productPage = productRepository.findAll(pageRequest);
+        return productPage.map(ProductListResponse.Product::fromProduct);
     }
 }

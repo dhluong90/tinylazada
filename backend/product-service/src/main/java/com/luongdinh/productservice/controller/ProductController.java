@@ -2,37 +2,38 @@ package com.luongdinh.productservice.controller;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.ws.rs.QueryParam;
 
-import com.luongdinh.productservice.configuration.TinyLazadaProperties;
-import com.luongdinh.productservice.dto.ProductListResponse;
+import com.luongdinh.productservice.entity.Product;
 import com.luongdinh.productservice.service.ProductService;
+import com.netflix.discovery.converters.Auto;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.micrometer.core.lang.NonNull;
+
 @RestController
 @RequestMapping("/products")
-public class ProductServiceController {
+public class ProductController {
 
-    private TinyLazadaProperties tinyLazadaProperties;
     private ProductService productService;
 
     @Autowired
-    public ProductServiceController(TinyLazadaProperties tinyLazadaProperties, ProductService productService){
-       this.productService = productService;
-       this.tinyLazadaProperties = tinyLazadaProperties;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
-
-    @GetMapping("/test")
-    public String getConfiguration() {
-        return String.valueOf(this.tinyLazadaProperties.getTest());
+    @GetMapping
+    public ResponseEntity<Page<Product>> productList(@RequestParam @NonNull @Min(0)  Integer page, @Max(1000) Integer size) {
+        PageRequest pageRequest = PageRequest.of(page, size);
+        productService.getProductsByPage(pageRequest);
+        return null;
     }
-
+    
 }
