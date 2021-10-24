@@ -1,7 +1,5 @@
 package com.luongdinh.productservice.repository;
 
-import java.util.List;
-
 import com.luongdinh.productservice.entity.Product;
 
 import org.springframework.data.domain.Page;

@@ -41,7 +41,7 @@ public class AuthenticationServiceTest {
         UserRequestDto userRequestDto = new UserRequestDto();
         userRequestDto.setEmail("userTest@gmail.com");
         userRequestDto.setFirstName("user");
-        userRequestDto.setLastname("test");
+        userRequestDto.setLastName("test");
         userRequestDto.setPassword("12345");;
         authenticationService.signUpByEmail(userRequestDto);
         String enryptedPassword = "12345-enrypted";

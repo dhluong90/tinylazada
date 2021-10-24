@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping(value="/", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
-    public ResponseEntity singup(@RequestBody @Validated UserRequestDto  userRequestDto) {
+    public ResponseEntity<Void> singup(@RequestBody @Validated UserRequestDto  userRequestDto) {
         authenticationService.signUpByEmail(userRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

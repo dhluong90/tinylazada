@@ -1,0 +1,6 @@
+#bash!
+export AWS_ACCESS_KEY=AKIAQ6S2UHZS4TYGHSVU
+export AWS_SECRET_KEY=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
+export AWS_BUCKET_NAME=tinylazada.ga
+
+echo $AWS_ACCESS_KEY

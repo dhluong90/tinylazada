@@ -1,0 +1,21 @@
+spring: 
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+    main: 
+        allow-bean-definition-overriding: true
+eureka: 
+    client: 
+        serviceUrl: 
+            defaultZone: http://localhost:8761/eureka
+tinylazada:
+    systemUserName: God
+    aws:
+        accessKey: ${AWS_ACCESS_KEY}
+        secretKey: ${AWS_SECRET_KEY}
+        region: ap-southeast-1
+        s3:
+            bucketName: ${AWS_BUCKET_NAME}
+            publicImgPath: assert

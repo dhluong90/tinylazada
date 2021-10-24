@@ -21,6 +21,7 @@
 ./fontend/build/*.*
 ./fontend/node_modules/*.*
 ./backend/.maven/*
+./backend/set_environment.sh
 *.project
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml

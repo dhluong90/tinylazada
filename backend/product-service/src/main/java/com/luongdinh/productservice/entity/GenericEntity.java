@@ -1,9 +1,7 @@
 package com.luongdinh.productservice.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
-import javax.annotation.sql.DataSourceDefinitions;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedBy;

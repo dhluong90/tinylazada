@@ -1,5 +1,7 @@
 package com.luongdinh.identityserver.domain;
 
+import java.util.Date;
+
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedBy;
@@ -18,9 +20,9 @@ public class GenericEntity {
     @LastModifiedBy
     private String modifiedBy;
     @CreatedDate
-    private long createdDate;
+    private Long createdDate;
     @LastModifiedDate
-    private long modifiedDate;
+    private Date modifiedDate;
     private boolean deleted = false;
     
 }
