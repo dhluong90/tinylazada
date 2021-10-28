@@ -1,7 +1,6 @@
 package com.luongdinh.productservice.controller;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
@@ -14,6 +13,7 @@ import com.luong.common.tinylazada.dto.PageResponse;
 import com.luongdinh.productservice.dto.MallRequest;
 import com.luongdinh.productservice.dto.MallResponse;
 import com.luongdinh.productservice.entity.Mall;
+import com.luongdinh.productservice.service.ImageService;
 import com.luongdinh.productservice.service.MallService;
 
 import org.modelmapper.ModelMapper;
@@ -39,9 +39,11 @@ import lombok.extern.slf4j.Slf4j;
 public class MallController {
 
     private MallService mallService;
+    private ImageService imageService;
 
-    public MallController(MallService mallService) {
+    public MallController(MallService mallService, ImageService imageService) {
         this.mallService = mallService;
+        this.imageService = imageService;
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
@@ -59,7 +61,9 @@ public class MallController {
     public ResponseEntity<PageResponse<MallResponse>> getListMall(@RequestParam("page") @NotNull @Min(0) Integer page,
             @RequestParam("size") @NotNull @Min(0) @Max(1000) Integer size) {
         Page<Mall> pageOfmall = mallService.getPage(page, size);
-        List<MallResponse> mallResponses = pageOfmall.get().map(MallResponse::fromMall).collect(Collectors.toList());
+        List<MallResponse> mallResponses = pageOfmall.get().map(MallResponse::fromMall).peek(i -> {
+            i.setLogoUrl(imageService.getFullImageUrl(i.getLogoUrl()));
+        }).collect(Collectors.toList());
         PageResponse<MallResponse> returnMe = PageResponse.<MallResponse>builder().pageNumber(pageOfmall.getNumber())
                 .size(pageOfmall.getSize()).totalPage(pageOfmall.getNumberOfElements()).content(mallResponses).build();
         return ResponseEntity.ok(returnMe);

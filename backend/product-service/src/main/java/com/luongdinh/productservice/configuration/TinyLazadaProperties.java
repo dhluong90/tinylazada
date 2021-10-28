@@ -26,5 +26,6 @@ public class TinyLazadaProperties {
     public static class S3 {
         private String bucketName;
         private String publicImgPath;
+        private String hostName;
     }
 }
