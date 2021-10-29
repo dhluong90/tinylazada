@@ -3,6 +3,7 @@ package com.luongdinh.productservice.controller;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+import com.luong.common.tinylazada.dto.PageResponse;
 import com.luongdinh.productservice.dto.ProductListResponse;
 import com.luongdinh.productservice.service.ProductService;
 
@@ -27,10 +28,13 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+
     @GetMapping
-    public ResponseEntity<Page<ProductListResponse.Product>> productList(@RequestParam @NonNull @Min(0)  Integer page, @Max(1000) Integer size) {
+    public ResponseEntity<PageResponse<ProductListResponse>> productList(@RequestParam @NonNull @Min(0) Integer page,
+            @Max(1000) Integer size) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        return ResponseEntity.ok(productService.getProductsByPage(pageRequest));
+        // return ResponseEntity.ok(productService.getProductsByPage(pageRequest));
+        return null;
     }
-    
+
 }
