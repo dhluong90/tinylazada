@@ -62,7 +62,7 @@ public class MallController {
             @RequestParam("size") @NotNull @Min(0) @Max(1000) Integer size) {
         Page<Mall> pageOfmall = mallService.getPage(page, size);
         List<MallResponse> mallResponses = pageOfmall.get().map(MallResponse::fromMall).peek(i -> {
-            i.setLogoUrl(imageService.getFullImageUrl(i.getLogoUrl()));
+            i.setLogoUrl(imageService.getFullImgUrl(i.getLogoUrl()));
         }).collect(Collectors.toList());
         PageResponse<MallResponse> returnMe = PageResponse.<MallResponse>builder().pageNumber(pageOfmall.getNumber())
                 .size(pageOfmall.getSize()).totalPage(pageOfmall.getNumberOfElements()).content(mallResponses).build();

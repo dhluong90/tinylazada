@@ -54,7 +54,7 @@ public class ImageServiceImpl extends AbstractCRUDService<Image, Long, ImageRepo
     }
 
     @Override
-    public String getFullImageUrl(String imageRelativeUrl) {
+    public String getFullImgUrl(String imageRelativeUrl) {
         return String.format("%s/%s/%s", tinyLazadaProperties.getAws().getS3().getHostName(),
                 tinyLazadaProperties.getAws().getS3().getBucketName(), imageRelativeUrl);
     }

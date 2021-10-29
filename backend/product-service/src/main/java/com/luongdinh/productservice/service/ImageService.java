@@ -18,6 +18,12 @@ public interface ImageService extends CRUDService<Image, Long, ImageRepository> 
      */
     public Image savePublicFile(String base64File, String fileName);
 
-    public String getFullImageUrl(String imageRelativeUrl);
+    /**
+     * convert relative url in image to full url.
+     * 
+     * @param image
+     * @return
+     */
+    public String getFullImgUrl(String image);
 
 }
