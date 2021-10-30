@@ -50,4 +50,9 @@ public class S3FileStoreageImpl implements FileStoreService {
         }
     }
 
+    @Override
+    public void delete(String path, String key) {
+        amazonS3.deleteObject(path, key);
+    }
+
 }

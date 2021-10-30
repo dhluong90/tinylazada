@@ -14,7 +14,7 @@ import lombok.Data;
 @MappedSuperclass
 @Data
 public class GenericEntity {
-    
+
     @LastModifiedDate
     private Date updatedDate;
     @CreatedDate
@@ -23,4 +23,5 @@ public class GenericEntity {
     private String createdBy;
     @LastModifiedBy
     private String updatedBy;
+    private boolean deleted;
 }

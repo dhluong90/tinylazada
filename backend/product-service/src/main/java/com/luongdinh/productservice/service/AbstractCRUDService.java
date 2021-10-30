@@ -2,11 +2,13 @@ package com.luongdinh.productservice.service;
 
 import java.util.Optional;
 
+import com.luongdinh.productservice.entity.GenericEntity;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public abstract class AbstractCRUDService<T, K, V extends PagingAndSortingRepository<T, K>>
+public abstract class AbstractCRUDService<T extends GenericEntity, K, V extends PagingAndSortingRepository<T, K>>
         implements CRUDService<T, K, V> {
 
     public T save(T t) {

@@ -43,7 +43,7 @@ public class ProductCategoryController {
         return ResponseEntity.ok(prodCategory);
     }
 
-    @GetMapping(value = "/${prodCategoryId}", produces = MediaType.APPLICATION_JSON)
+    @GetMapping(value = "/{prodCategoryId}", produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<ProductCategoryResponseDto> getProductCategory(@PathParam("prodCategoryId") Long id) {
         ModelMapper modelMapper = new ModelMapper();
         return ResponseEntity
@@ -58,7 +58,7 @@ public class ProductCategoryController {
                 .body(modelMapper.map(proCat, ProductCategoryResponseDto.class));
     }
 
-    @PutMapping(value = "/${productCategoryId}", consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
+    @PutMapping(value = "/{productCategoryId}", consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<ProductCategoryResponseDto> update(@PathParam("prodCategoryId") Long id,
             ProductCategoryRequestDto productCategoryRequestDto) {
         ProductCategory productCategory = this.productCategoryService
@@ -66,7 +66,7 @@ public class ProductCategoryController {
         return ResponseEntity.ok(modelMapper.map(productCategory, ProductCategoryResponseDto.class));
     }
 
-    @DeleteMapping(value = "/${productCategoryId}", consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
+    @DeleteMapping(value = "/{productCategoryId}", consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<Void> delete(@PathParam("productCategoryId") Long id) {
         this.productCategoryService.delete(id);
         return ResponseEntity.ok().build();

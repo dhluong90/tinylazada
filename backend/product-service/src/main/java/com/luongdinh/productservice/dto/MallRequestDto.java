@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class MallRequest {
+public class MallRequestDto {
     @NotBlank(message = "Mall name can't be blank")
     private String name;
     @NotBlank(message = "Logo file can't be blank")

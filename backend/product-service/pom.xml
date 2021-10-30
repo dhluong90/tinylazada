@@ -17,6 +17,12 @@
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>com.luong.tinylazada</groupId>
 			<artifactId>common</artifactId>

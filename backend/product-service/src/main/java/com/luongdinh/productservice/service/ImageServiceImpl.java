@@ -43,20 +43,29 @@ public class ImageServiceImpl extends AbstractCRUDService<Image, Long, ImageRepo
         byte[] bytes = Base64.decode(base64File);
         InputStream inputStream = new ByteArrayInputStream(bytes);
         String filePath = getPublicImgeName(fileName);
-        s3fFileStoreService.upload(tinyLazadaProperties.getAws().getS3().getBucketName(), filePath, Optional.empty(),
-                inputStream);
+        s3fFileStoreService.upload(getPath(), filePath, Optional.empty(), inputStream);
         return save(Image.builder().url(filePath).build());
     }
 
     private String getPublicImgeName(String originalName) {
-        return String.format("%s/%s_%s", tinyLazadaProperties.getAws().getS3().getPublicImgPath(), UUID.randomUUID(),
-                originalName);
+        return String.format("%s/%s_%s", getPath(), UUID.randomUUID(), originalName);
     }
 
     @Override
     public String getFullImgUrl(String imageRelativeUrl) {
-        return String.format("%s/%s/%s", tinyLazadaProperties.getAws().getS3().getHostName(),
-                tinyLazadaProperties.getAws().getS3().getBucketName(), imageRelativeUrl);
+        return String.format("%s/%s/%s", tinyLazadaProperties.getAws().getS3().getHostName(), getPath(),
+                imageRelativeUrl);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Image img = imageRepository.findById(id).orElseThrow();
+        img.setDeleted(true);
+        s3fFileStoreService.delete(getPath(), img.getUrl());
+    }
+
+    private String getPath() {
+        return tinyLazadaProperties.getAws().getS3().getBucketName();
     }
 
 }

@@ -9,4 +9,6 @@ public interface FileStoreService {
             InputStream inputStream);
 
     public byte[] download(String path, String key);
+
+    public void delete(String path, String key);
 }

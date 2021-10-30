@@ -6,6 +6,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +21,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
+@SQLDelete(sql = "UPDATE image SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class Image extends GenericEntity {
 
     @Id
