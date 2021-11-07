@@ -2,7 +2,6 @@ package com.luongdinh.identityserver.domain;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.ColumnDefault;

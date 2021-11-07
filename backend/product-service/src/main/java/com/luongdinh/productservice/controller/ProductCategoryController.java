@@ -53,7 +53,7 @@ public class ProductCategoryController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<ProductCategoryResponseDto> save(ProductCategoryRequestDto productCategoryRequestDto) {
         ProductCategory proCat = this.productCategoryService
-                .save(new ProductCategory(null, productCategoryRequestDto.getName()));
+                .save(ProductCategory.builder().id(null).name(productCategoryRequestDto.getName()).build());
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(modelMapper.map(proCat, ProductCategoryResponseDto.class));
     }
@@ -62,7 +62,7 @@ public class ProductCategoryController {
     public ResponseEntity<ProductCategoryResponseDto> update(@PathParam("prodCategoryId") Long id,
             ProductCategoryRequestDto productCategoryRequestDto) {
         ProductCategory productCategory = this.productCategoryService
-                .save(new ProductCategory(id, productCategoryRequestDto.getName()));
+                .save(ProductCategory.builder().id(id).name(productCategoryRequestDto.getName()).build());
         return ResponseEntity.ok(modelMapper.map(productCategory, ProductCategoryResponseDto.class));
     }
 

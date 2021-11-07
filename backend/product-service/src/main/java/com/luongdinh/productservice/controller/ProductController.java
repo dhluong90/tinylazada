@@ -6,7 +6,7 @@ import javax.validation.constraints.Min;
 import javax.websocket.server.PathParam;
 import javax.ws.rs.core.MediaType;
 
-import com.luong.common.tinylazada.dto.PageResponse;
+import com.luong.tinylazada.common.dto.PageResponse;
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductDetailResponseDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;

@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import com.luongdinh.productservice.entity.Mall;
 
-import org.bouncycastle.pqc.jcajce.provider.rainbow.SignatureSpi.withSha224;
-
 import lombok.Builder;
 import lombok.Data;
 

@@ -2,7 +2,7 @@ package com.luongdinh.productservice.service;
 
 import java.util.Optional;
 
-import com.luongdinh.productservice.entity.GenericEntity;
+import com.luong.tinylazada.common.entity.GenericEntity;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

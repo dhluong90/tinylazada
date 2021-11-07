@@ -7,6 +7,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
+import com.luong.tinylazada.common.entity.GenericEntity;
+
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 

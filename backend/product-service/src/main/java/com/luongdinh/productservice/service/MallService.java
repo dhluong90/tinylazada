@@ -1,7 +1,6 @@
 package com.luongdinh.productservice.service;
 
 import com.luongdinh.productservice.dto.MallRequestDto;
-import com.luongdinh.productservice.dto.MallRequestDto;
 import com.luongdinh.productservice.entity.Mall;
 import com.luongdinh.productservice.repository.MallRepository;
 

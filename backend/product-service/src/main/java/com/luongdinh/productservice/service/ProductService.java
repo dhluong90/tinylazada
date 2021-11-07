@@ -1,6 +1,6 @@
 package com.luongdinh.productservice.service;
 
-import com.luong.common.tinylazada.dto.PageResponse;
+import com.luong.tinylazada.common.dto.PageResponse;
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;
 import com.luongdinh.productservice.entity.Product;

@@ -17,5 +17,6 @@ tinylazada:
         secretKey: ${AWS_SECRET_KEY}
         region: ap-southeast-1
         s3:
-            bucketName: ${AWS_BUCKET_NAME}
+            bucketName: ${AWS_BUCKET_NAME:tinylazada.ga}
             publicImgPath: assert
+            hostName: https://s3.ap-southeast-1.amazonaws.com

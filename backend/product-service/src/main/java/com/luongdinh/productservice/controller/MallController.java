@@ -9,7 +9,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.core.MediaType;
 
-import com.luong.common.tinylazada.dto.PageResponse;
+import com.luong.tinylazada.common.dto.*;
 import com.luongdinh.productservice.dto.MallRequestDto;
 import com.luongdinh.productservice.dto.MallResponseDto;
 import com.luongdinh.productservice.entity.Mall;

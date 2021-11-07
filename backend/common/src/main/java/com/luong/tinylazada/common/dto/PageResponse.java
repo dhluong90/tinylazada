@@ -1,4 +1,4 @@
-package com.luong.common.tinylazada.dto;
+package com.luong.tinylazada.common.dto;
 
 import java.util.List;
 

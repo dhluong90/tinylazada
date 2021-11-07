@@ -1,4 +1,4 @@
-package com.luongdinh.productservice.entity;
+package com.luong.tinylazada.common.entity;
 
 import java.util.Date;
 
