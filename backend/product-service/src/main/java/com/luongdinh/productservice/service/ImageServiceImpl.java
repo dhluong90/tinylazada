@@ -6,9 +6,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 import com.amazonaws.util.Base64;
-import com.luongdinh.productservice.configuration.TinyLazadaProperties;
 import com.luongdinh.productservice.entity.Image;
 import com.luongdinh.productservice.repository.ImageRepository;
+import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

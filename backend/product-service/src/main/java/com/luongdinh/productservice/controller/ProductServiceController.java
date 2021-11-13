@@ -1,7 +1,7 @@
 package com.luongdinh.productservice.controller;
 
-import com.luongdinh.productservice.configuration.TinyLazadaProperties;
 import com.luongdinh.productservice.service.ProductService;
+import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +16,9 @@ public class ProductServiceController {
     private ProductService productService;
 
     @Autowired
-    public ProductServiceController(TinyLazadaProperties tinyLazadaProperties, ProductService productService){
-       this.productService = productService;
-       this.tinyLazadaProperties = tinyLazadaProperties;
+    public ProductServiceController(TinyLazadaProperties tinyLazadaProperties, ProductService productService) {
+        this.productService = productService;
+        this.tinyLazadaProperties = tinyLazadaProperties;
     }
 
     @GetMapping("/test")

@@ -3,3 +3,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/tinylazada_identity
     username: gandalf
     password: postgres
+  jpa:
+    generate-ddl: true
+    hibernate: 
+      ddl-auto: update

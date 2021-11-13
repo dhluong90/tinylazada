@@ -1,4 +1,4 @@
-package com.luongdinh.productservice.configuration;
+package com.luongdinh.identityserver.configuration;
 
 import com.luongdinh.tinylazada.common.configuration.CustomAuditAware;
 import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;

@@ -1,2 +1,5 @@
-/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/common/tinylazada/dto/PageResponse.java
-/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/App.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/tinylazada/common/service/AbstractCRUDService.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/tinylazada/common/dto/PageResponse.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/tinylazada/common/service/CRUDService.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/tinylazada/common/utils/JWTUtil.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luong/tinylazada/common/entity/GenericEntity.java

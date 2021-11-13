@@ -1,4 +1,4 @@
-package com.luongdinh.productservice.configuration;
+package com.luongdinh.tinylazada.common.configuration;
 
 import java.util.Optional;
 
@@ -16,5 +16,5 @@ public class CustomAuditAware implements AuditorAware<String> {
     public Optional<String> getCurrentAuditor() {
         return Optional.of(tinyLazadaProperties.getSystemUserName());
     }
-    
+
 }

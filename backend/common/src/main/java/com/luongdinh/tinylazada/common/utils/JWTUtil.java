@@ -1,4 +1,4 @@
-package com.luong.tinylazada.utils;
+package com.luongdinh.tinylazada.common.utils;
 
 import lombok.experimental.UtilityClass;
 

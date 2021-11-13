@@ -3,12 +3,12 @@ package com.luongdinh.productservice.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.luong.tinylazada.common.dto.PageResponse;
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;
 import com.luongdinh.productservice.entity.Product;
 import com.luongdinh.productservice.entity.ProductReview;
 import com.luongdinh.productservice.repository.ProductRepository;
+import com.luongdinh.tinylazada.common.dto.PageResponse;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

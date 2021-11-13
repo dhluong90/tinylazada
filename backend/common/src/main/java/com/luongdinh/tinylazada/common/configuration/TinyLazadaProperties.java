@@ -1,4 +1,4 @@
-package com.luongdinh.productservice.configuration;
+package com.luongdinh.tinylazada.common.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

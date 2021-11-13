@@ -1,5 +1,6 @@
-package com.luongdinh.productservice.service;
+package com.luongdinh.tinylazada.common.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.luongdinh.tinylazada.common.entity.GenericEntity;

@@ -6,12 +6,12 @@ import javax.validation.constraints.Min;
 import javax.websocket.server.PathParam;
 import javax.ws.rs.core.MediaType;
 
-import com.luong.tinylazada.common.dto.PageResponse;
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductDetailResponseDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;
 import com.luongdinh.productservice.entity.Product;
 import com.luongdinh.productservice.service.ProductService;
+import com.luongdinh.tinylazada.common.dto.PageResponse;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

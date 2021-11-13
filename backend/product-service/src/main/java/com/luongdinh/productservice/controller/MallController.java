@@ -9,12 +9,12 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.core.MediaType;
 
-import com.luong.tinylazada.common.dto.*;
 import com.luongdinh.productservice.dto.MallRequestDto;
 import com.luongdinh.productservice.dto.MallResponseDto;
 import com.luongdinh.productservice.entity.Mall;
 import com.luongdinh.productservice.service.ImageService;
 import com.luongdinh.productservice.service.MallService;
+import com.luongdinh.tinylazada.common.dto.*;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;

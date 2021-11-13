@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-import com.luong.tinylazada.common.entity.GenericEntity;
+import com.luongdinh.tinylazada.common.entity.GenericEntity;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
