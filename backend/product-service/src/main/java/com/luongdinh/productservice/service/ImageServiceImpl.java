@@ -42,9 +42,7 @@ public class ImageServiceImpl extends AbstractCRUDService<Image, Long, ImageRepo
     public Image savePublicFile(String base64File, String fileName) {
         byte[] bytes = Base64.decode(base64File);
         InputStream inputStream = new ByteArrayInputStream(bytes);
-        String filePath = getPublicImgeName(fileName);
-        s3fFileStoreService.upload(getPath(), filePath, Optional.empty(), inputStream);
-        return save(Image.builder().url(filePath).build());
+        return savePublicFile(inputStream, fileName);
     }
 
     private String getPublicImgeName(String originalName) {
@@ -66,6 +64,13 @@ public class ImageServiceImpl extends AbstractCRUDService<Image, Long, ImageRepo
 
     private String getPath() {
         return tinyLazadaProperties.getAws().getS3().getBucketName();
+    }
+
+    @Override
+    public Image savePublicFile(InputStream inputStream, String fileName) {
+        String filePath = getPublicImgeName(fileName);
+        s3fFileStoreService.upload(getPath(), filePath, Optional.empty(), inputStream);
+        return save(Image.builder().url(filePath).build());
     }
 
 }

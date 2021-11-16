@@ -1,5 +1,6 @@
 package com.luongdinh.productservice.service;
 
+import java.io.InputStream;
 import java.util.Optional;
 
 import com.luongdinh.productservice.entity.Image;
@@ -17,6 +18,15 @@ public interface ImageService extends CRUDService<Image, Long, ImageRepository> 
      * @return
      */
     public Image savePublicFile(String base64File, String fileName);
+
+    /**
+     * allow to upload file
+     * 
+     * @param inputStream
+     * @param fileName
+     * @return
+     */
+    public Image savePublicFile(InputStream inputStream, String fileName);
 
     /**
      * convert relative url in image to full url.
