@@ -1,5 +1,7 @@
 package com.luongdinh.productservice.dto;
 
+import java.math.BigDecimal;
+
 import lombok.Data;
 
 @Data
@@ -10,4 +12,6 @@ public class ProductListResponseDto {
     private String imgeUrl;
     private Double averageStar;
     private Integer totalReview;
+    private String brandName;
+    private BigDecimal price;
 }

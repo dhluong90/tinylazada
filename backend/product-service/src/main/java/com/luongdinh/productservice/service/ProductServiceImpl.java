@@ -5,9 +5,11 @@ import java.util.stream.Collectors;
 
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;
+import com.luongdinh.productservice.dto.ProductSearchParamDto;
 import com.luongdinh.productservice.entity.Product;
 import com.luongdinh.productservice.entity.ProductReview;
 import com.luongdinh.productservice.repository.ProductRepository;
+import com.luongdinh.productservice.repository.specificationBuilder.ProductSearchSpecBuilder;
 import com.luongdinh.tinylazada.common.dto.PageResponse;
 
 import org.modelmapper.ModelMapper;
@@ -30,13 +32,17 @@ public class ProductServiceImpl extends AbstractCRUDService<Product, Long, Produ
     }
 
     @Override
-    public PageResponse<ProductListResponseDto> getProductsByPage(PageRequest pageRequest) {
-        Page<Product> productPage = productRepository.findAll(pageRequest);
+    public PageResponse<ProductListResponseDto> getProductsByPage(PageRequest pageRequest,
+            ProductSearchParamDto productSearchParamDto) {
+        Page<Product> productPage = productRepository
+                .findAll(ProductSearchSpecBuilder.getProductSearchSpec(productSearchParamDto), pageRequest);
         List<ProductListResponseDto> productListReponses = productPage.get().map(i -> {
             ProductListResponseDto pro = modelMapper.map(i, ProductListResponseDto.class);
             List<ProductReview> productReview = i.getProductReview();
             pro.setAverageStar(productReview.stream().mapToDouble(ProductReview::getNumberOfStar).average().orElse(0D));
             pro.setTotalReview(productReview.size());
+            pro.setBrandName(i.getBrand());
+            pro.setPrice(i.getPrice());
             return pro;
         }).collect(Collectors.toList());
         return PageResponse.<ProductListResponseDto>builder().content(productListReponses)

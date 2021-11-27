@@ -1,5 +1,8 @@
 package com.luongdinh.productservice.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -9,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import com.luongdinh.productservice.dto.ProductDetailRequestDto;
 import com.luongdinh.productservice.dto.ProductDetailResponseDto;
 import com.luongdinh.productservice.dto.ProductListResponseDto;
+import com.luongdinh.productservice.dto.ProductSearchParamDto;
 import com.luongdinh.productservice.entity.Product;
 import com.luongdinh.productservice.service.ProductService;
 import com.luongdinh.tinylazada.common.dto.PageResponse;
@@ -45,9 +49,10 @@ public class ProductController {
     @GetMapping(produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<PageResponse<ProductListResponseDto>> productList(
             @RequestParam(defaultValue = "0") @NonNull @Min(0) Integer page,
-            @RequestParam(defaultValue = "100") @Max(1000) Integer size) {
+            @RequestParam(defaultValue = "100") @Max(1000) Integer size, Optional<List<Long>> ids) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        return ResponseEntity.ok(productService.getProductsByPage(pageRequest));
+        return ResponseEntity
+                .ok(productService.getProductsByPage(pageRequest, ProductSearchParamDto.builder().ids(ids).build()));
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON)

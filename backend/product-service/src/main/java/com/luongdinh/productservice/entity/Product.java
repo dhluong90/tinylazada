@@ -1,5 +1,6 @@
 package com.luongdinh.productservice.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -36,7 +37,7 @@ public class Product extends GenericEntity {
     private Mall mall;
     @OneToMany
     private List<ProductReview> productReview;
-    private Double price;
+    private BigDecimal price;
     private boolean cashDelivery;
     private String brand;
     @OneToMany

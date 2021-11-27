@@ -1,5 +1,6 @@
 package com.luongdinh.productservice.dto;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public class ProductDetailResponseDto {
     private String name;
     private MallResponseDto mall;
     private List<ProductReviewResponseDto> productReview;
-    private Double price;
+    private BigDecimal price;
     private boolean cashDelivery;
     private String brand;
     private List<Image> images;

@@ -1,5 +1,6 @@
 package com.luongdinh.productservice.dto;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -32,7 +33,7 @@ public class ProductDetailRequestDto {
     @NotBlank(message = "Product must be belong to 1 mall")
     private Long mallId;
     @NotNull(message = "Product must have price")
-    private Double price;
+    private BigDecimal price;
     private boolean cashDelivery;
     @NotNull(message = "Product brand can't be null")
     @NotBlank(message = "Product brand can't be blank")
