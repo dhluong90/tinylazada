@@ -1,7 +1,4 @@
-package com.luongdinh.identityserver.configuration;
-
-import com.luongdinh.tinylazada.common.configuration.CustomAuditAware;
-import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;
+package com.luongdinh.tinylazada.common.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
