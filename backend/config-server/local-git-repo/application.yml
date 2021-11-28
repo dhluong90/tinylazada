@@ -20,3 +20,10 @@ tinylazada:
       bucketName: ${AWS_BUCKET_NAME:tinylazada.ga}
       publicImgPath: assert
       hostName: https://s3.ap-southeast-1.amazonaws.com
+  jwt:
+    secretKey: dcdfHDHIK@(90
+    expiredInSecond: 3600
+    header: authorization
+    prefix: Bear
+    claim:
+      userName: userName

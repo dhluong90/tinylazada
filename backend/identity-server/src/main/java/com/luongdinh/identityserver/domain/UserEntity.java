@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@SQLDelete(sql = "UPDATE product SET deleted = true WHERE id=?")
+@SQLDelete(sql = "UPDATE user_entity SET deleted = true WHERE id=?")
 @Where(clause = "deleted=false")
 public class UserEntity extends GenericEntity {
 

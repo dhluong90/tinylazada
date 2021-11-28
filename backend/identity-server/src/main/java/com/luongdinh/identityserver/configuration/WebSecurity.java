@@ -1,6 +1,9 @@
 package com.luongdinh.identityserver.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.luongdinh.identityserver.service.UserEntityService;
+import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;
+import com.luongdinh.tinylazada.common.security.AuthorizationTokenFilter;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,11 +20,14 @@ import lombok.AllArgsConstructor;
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     private UserDetailsService userDetailsService;
+    private UserEntityService userEntityService;
+    private TinyLazadaProperties tinyLazadaProperties;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/**").permitAll().and().addFilter(getAuthenticationFiler());
+        http.authorizeRequests().antMatchers("/**").permitAll().and().addFilter(getAuthenticationFiler())
+                .addFilter(getAuthorizationFilter());
         http.headers().frameOptions().disable();
     }
 
@@ -32,7 +38,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     private AuthenticationFilter getAuthenticationFiler() throws Exception {
-        return new AuthenticationFilter(authenticationManager(), userDetailsService);
+        return new AuthenticationFilter(authenticationManager(), userEntityService);
+    }
+
+    private AuthorizationTokenFilter getAuthorizationFilter() throws Exception {
+        return new AuthorizationTokenFilter(authenticationManager(), tinyLazadaProperties);
     }
 
 }

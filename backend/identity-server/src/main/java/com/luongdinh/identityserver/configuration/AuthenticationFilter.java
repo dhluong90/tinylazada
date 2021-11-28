@@ -2,13 +2,18 @@ package com.luongdinh.identityserver.configuration;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Optional;
 
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.luongdinh.identityserver.domain.UserEntity;
 import com.luongdinh.identityserver.dto.LoginRequestDto;
+import com.luongdinh.identityserver.service.UserEntityService;
+import com.luongdinh.tinylazada.common.configuration.TinyLazadaProperties;
+import com.luongdinh.tinylazada.common.exceptions.UnknowExcpetion;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
@@ -16,19 +21,17 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.yaml.snakeyaml.util.UriEncoder;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-    UserDetailsService userDetailsService;
+    UserEntityService userDetailsService;
+    TinyLazadaProperties tinyLazadaProperties;
 
-    public AuthenticationFilter(AuthenticationManager authenticationManager, UserDetailsService userDetailsService) {
+    public AuthenticationFilter(AuthenticationManager authenticationManager, UserEntityService userDetailsService) {
         super(authenticationManager);
         this.userDetailsService = userDetailsService;
     }
@@ -57,9 +60,12 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     public void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain,
             Authentication auth) {
         String userName = ((User) auth.getPrincipal()).getUsername();
-        UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
-        String token = Jwts.builder().setSubject(userName).setExpiration(new Date(System.currentTimeMillis() + 3600))
-                .signWith(SignatureAlgorithm.HS512, "dcdfHDHIK@(90").compact();
+        UserEntity userEntity = userDetailsService.getUserByEmail(userName).orElseThrow(UnknowExcpetion::new);
+        String token = Jwts.builder().setSubject(userEntity.getId().toString())
+                .setExpiration(new Date(
+                        System.currentTimeMillis() + tinyLazadaProperties.getJwt().getExpiredInSecond() * 1000))
+                .claim(tinyLazadaProperties.getJwt().getClaim().getUserName(), userName)
+                .signWith(SignatureAlgorithm.HS512, tinyLazadaProperties.getJwt().getSecretKey()).compact();
         res.setHeader("token", token);
         res.setHeader("userName", userName);
     };

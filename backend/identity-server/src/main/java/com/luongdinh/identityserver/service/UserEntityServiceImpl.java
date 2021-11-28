@@ -52,4 +52,9 @@ public class UserEntityServiceImpl extends AbstractCRUDService<UserEntity, Long,
         return user.orElse(null);
     }
 
+    @Override
+    public Optional<UserEntity> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
 }
