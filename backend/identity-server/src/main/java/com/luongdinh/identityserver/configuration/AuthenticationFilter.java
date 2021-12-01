@@ -2,7 +2,6 @@ package com.luongdinh.identityserver.configuration;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.Optional;
 
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
@@ -31,9 +30,11 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     UserEntityService userDetailsService;
     TinyLazadaProperties tinyLazadaProperties;
 
-    public AuthenticationFilter(AuthenticationManager authenticationManager, UserEntityService userDetailsService) {
+    public AuthenticationFilter(AuthenticationManager authenticationManager, UserEntityService userDetailsService,
+            TinyLazadaProperties tinyLazadaProperties) {
         super(authenticationManager);
         this.userDetailsService = userDetailsService;
+        this.tinyLazadaProperties = tinyLazadaProperties;
     }
 
     @Override

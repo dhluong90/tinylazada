@@ -24,6 +24,6 @@ tinylazada:
     secretKey: dcdfHDHIK@(90
     expiredInSecond: 3600
     header: authorization
-    prefix: Bear
+    prefix: Bearer
     claim:
       userName: userName

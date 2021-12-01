@@ -26,7 +26,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/**").permitAll().and().addFilter(getAuthenticationFiler())
+        http.authorizeRequests().antMatchers("/swagger--ui").permitAll().and().authorizeRequests()
+                .antMatchers("/users/**").authenticated().and().addFilter(getAuthenticationFiler())
                 .addFilter(getAuthorizationFilter());
         http.headers().frameOptions().disable();
     }
@@ -38,7 +39,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     private AuthenticationFilter getAuthenticationFiler() throws Exception {
-        return new AuthenticationFilter(authenticationManager(), userEntityService);
+        return new AuthenticationFilter(authenticationManager(), userEntityService, tinyLazadaProperties);
     }
 
     private AuthorizationTokenFilter getAuthorizationFilter() throws Exception {
