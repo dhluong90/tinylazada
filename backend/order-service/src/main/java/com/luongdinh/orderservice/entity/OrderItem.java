@@ -36,7 +36,6 @@ public class OrderItem extends GenericEntity {
     private Integer quantity;
     @Column(nullable = false)
     private BigDecimal price;
-    @Column(nullable = false)
     @ManyToOne
     private Order order;
 

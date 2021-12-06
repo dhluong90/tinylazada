@@ -20,8 +20,11 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Where(clause = "deleted=false")
@@ -29,6 +32,8 @@ import lombok.Data;
 @EntityListeners(AuditingEntityListener.class)
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Order extends GenericEntity {
 
     @Id

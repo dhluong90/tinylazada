@@ -1,6 +1,7 @@
 package com.luongdinh.productservice.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.luongdinh.tinylazada.common.entity.GenericEntity;
@@ -23,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProductCategory extends GenericEntity {
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
 }

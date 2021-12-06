@@ -34,7 +34,7 @@ public class CartItemServiceImpl extends AbstractCRUDService<CartItem, Long, Car
 
     @Override
     public List<CartItemResponseDto> getCartItemByUserId(String userId) {
-        List<CartItem> cartItems = cartItemRepository.findByUserId(userId);
+        List<CartItem> cartItems = cartItemRepository.findByUserCart_id(userId);
         List<Long> productIds = cartItems.stream().map(CartItem::getProductId).collect(Collectors.toList());
         PageResponse<ProductListResponseDto> products = productServiceClient.fetchProductListResponse(0, 1000,
                 productIds);

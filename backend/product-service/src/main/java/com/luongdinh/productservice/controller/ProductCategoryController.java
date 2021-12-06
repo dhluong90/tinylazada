@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,7 +52,8 @@ public class ProductCategoryController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)
-    public ResponseEntity<ProductCategoryResponseDto> save(ProductCategoryRequestDto productCategoryRequestDto) {
+    public ResponseEntity<ProductCategoryResponseDto> save(
+            @RequestBody ProductCategoryRequestDto productCategoryRequestDto) {
         ProductCategory proCat = this.productCategoryService
                 .save(ProductCategory.builder().id(null).name(productCategoryRequestDto.getName()).build());
         return ResponseEntity.status(HttpStatus.CREATED)

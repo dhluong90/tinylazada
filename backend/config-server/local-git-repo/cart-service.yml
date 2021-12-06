@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tinylazada_cart
-    username: postgres
+    username: gandalf
     password: postgres
   jpa:
     generate-ddl: true

@@ -3,12 +3,10 @@ package com.luongdinh.cartservice.controller;
 import java.util.List;
 
 import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
 
 import com.luongdinh.cartservice.dto.CartItemResponseDto;
 import com.luongdinh.cartservice.dto.UserCartRequestDto;
 import com.luongdinh.cartservice.dto.UserCartResponseDto;
-import com.luongdinh.cartservice.entity.CartItem;
 import com.luongdinh.cartservice.service.CartItemService;
 import com.luongdinh.cartservice.service.UserCartService;
 

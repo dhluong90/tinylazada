@@ -3,6 +3,7 @@ package com.luongdinh.productservice.controller;
 import java.io.IOException;
 
 import com.amazonaws.services.kafkaconnect.model.BadRequestException;
+import com.luongdinh.productservice.dto.ImageCreationRequestDto;
 import com.luongdinh.productservice.entity.Image;
 import com.luongdinh.productservice.service.ImageService;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -23,7 +25,7 @@ public class ImageController {
 
     private ImageService imageService;
 
-    @PostMapping
+    @PostMapping("/upload")
     public ResponseEntity<Image> uploadImage(@RequestParam("file") MultipartFile multipartFile) {
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(
@@ -31,5 +33,10 @@ public class ImageController {
         } catch (IOException e) {
             throw new BadRequestException(e.getMessage());
         }
+    }
+
+    @PostMapping
+    public ResponseEntity<Image> uploadImage(@RequestBody ImageCreationRequestDto imageCreationRequestDto) {
+        return null;
     }
 }

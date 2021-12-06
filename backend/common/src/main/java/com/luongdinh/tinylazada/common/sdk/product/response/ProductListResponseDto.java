@@ -9,7 +9,7 @@ public class ProductListResponseDto {
 
     private Long id;
     private String productName;
-    private String imgeUrl;
+    private String imageUrl;
     private Double averageStar;
     private Integer totalReview;
     private String brandName;

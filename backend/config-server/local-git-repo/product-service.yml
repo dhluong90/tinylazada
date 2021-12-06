@@ -3,7 +3,7 @@ tinylazada:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tinylazada_product
-    username: postgres
+    username: gandalf
     password: postgres
   jpa:
     generate-ddl: true

@@ -6,6 +6,13 @@ spring:
     password: guest
   main:
     allow-bean-definition-overriding: true
+  zipkin:
+    base-url: http://localhost:9114
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
 eureka:
   client:
     serviceUrl:
@@ -13,15 +20,15 @@ eureka:
 tinylazada:
   systemUserName: God
   aws:
-    accessKey: ${AWS_ACCESS_KEY}
-    secretKey: ${AWS_SECRET_KEY}
+    accessKey: "{cipher}AQC1rvOpmZ88xRBfweYvkf9Z1jdpJSBfeYnLa27MoFnlZKqJsEg+3Ib5eiHIlkm22DqtYUU9c9s2dXi2yvCe3cix5ggQ59miahfwiTRNPrWquvcWL/M3uCyC/0mpnj8PD4tLSmkFWHzupaCD8KxH6DdEhQkkG006RosXl4lGAZgCq9lX24nKOkVg4N/8cthWH/S8rObz8aCWBjtofLFDZiXgYVHeLtmpp5AhxOLyNDOhaxny4hxQJFxVPujmCikOyvlrwFr2HFqxjbCRiqgDOSFzKls5fbqDhLz81VwqAq07sbp/3VLNZodZZzFDw6B/6TH3P1stLCos/sTnv1Xz1g0/q8C/m5WeuuFThKtIdCZxfBHrP8aEbPvzDVTtcLiqKGALVhu+kStwJP2xfWDHc4XZ"
+    secretKey: "{cipher}AQC10dGSP9+heUeellAyFPkNv6psUAHvYU95bU+RCZCmGHllW6/rML39o98O/V9M7Nnqjl/WzcSK6jZ7yCdOZ6Y8PZ4Kb2g5idIRcah8IH6VBZNhxHOuVCuW6qPj/EVCY/m+D+A/szfagcD4c2j0kcHphBvIru+RkczyAt8Z0CxV0FvhCroiYoN19VPBp9MWUobU/eJEYwpp6dOSmYntPj30XAgF0M+sl5qiXThP5LUjjTH8c61HYx9zVhEbWX4RQs9/8F0BfcSoiEaghtiTwC0iF57go5am9qbYHlmZNdfW08SgsWJLC4hhKuZa68k7iaxQpGpjDYT248gdXmpIveKHsxtd7G/tlVdqporNn+v227ebpXfQtuN6tfHYhXijLpz/OAwXzZNWGqTGKwZuRVICz3jV+NqfntvtFcZAsc8y/A=="
     region: ap-southeast-1
     s3:
-      bucketName: ${AWS_BUCKET_NAME:tinylazada.ga}
+      bucketName: tinylazada.ga
       publicImgPath: assert
       hostName: https://s3.ap-southeast-1.amazonaws.com
   jwt:
-    secretKey: dcdfHDHIK@(90
+    secretKey: "{cipher}AQAD9uwKxaBN1E/MT/Btjhl/QiMUjvh3foj3ZGYjJnRtD2L1eVEpKLr8QlKeg1nAyFr+otpz/2nayIit4QMQwq8bjFHj2MrM09g1iX5N86Q8OlADLPtpWwmKbjSYpNKwj1/cJvsV1j3DOtOt4IdHqs3IYGc5VS3aTTuXxmsFac1zcwyiyOwsy31eLkeA8lWM21b92N0mxW3HkIRORTwVTHCHZMSr1uI6N9PGgrK0nfDzcMhQGXADcupbZzbOd8DmE/x2zc034ClH4nuzFpt8EFvGz4+Plp40k0aR/pFFXZPAsgbRz3KRDzs0iAPEiK1DRJceza9OcaSsqa+5cog8+jS1nhF1iA79P+/lPZLyClkTQ/zaLk103cOSS9PmWxHiT54="
     expiredInSecond: 3600
     header: authorization
     prefix: Bearer

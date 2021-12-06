@@ -12,9 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CartItemRepository extends PagingAndSortingRepository<CartItem, Long> {
 
-    @Query("select c from CartItem c join c.userCard where c.userCard.userId = :userId")
-    List<CartItem> findByUserId(@Param("userId") String userId);
+    List<CartItem> findByUserCart_id(@Param("userId") String userId);
 
-    @Query("update CartItem C set C.delete = true where C.id in (:ids) and C.userCart exists (select U from UserCart U where U.userId = :userId)")
+    @Query("update CartItem C set C.deleted = true where C.id in (:ids) and C.userCart in (select U from UserCart U where U.userId = :userId)")
     void deleteByIdAndUserID(@Param("ids") List<Long> itemId, @Param("userId") Long userId);
 }
