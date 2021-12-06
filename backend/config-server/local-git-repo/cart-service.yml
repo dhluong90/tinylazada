@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tinylazada_cart
+    username: gandalf
+    password: postgres
+  jpa:
+    generate-ddl: true
+    hibernate:

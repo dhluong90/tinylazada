@@ -1,0 +1,13 @@
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/configuration/CustomAuditAware.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/configuration/TinyLazadaProperties.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/sdk/product/response/ProductListResponseDto.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/configuration/SpringFoxConfig.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/sdk/product/ProductServiceClient.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/service/AbstractCRUDService.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/entity/GenericEntity.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/service/CRUDService.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/dto/PageResponse.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/sdk/product/request/ProductSearchParamDto.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/security/AuthorizationTokenFilter.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/configuration/JpaAuditConfiguration.java
+/Users/gandalf/mycode/tinylazada/backend/common/src/main/java/com/luongdinh/tinylazada/common/exceptions/UnknowExcpetion.java

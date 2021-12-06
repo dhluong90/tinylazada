@@ -1,0 +1,11 @@
+tinylazada:
+  test: 3
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tinylazada_product
+    username: gandalf
+    password: postgres
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update

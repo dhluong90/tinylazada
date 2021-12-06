@@ -39,6 +39,36 @@
       "mainClass": "com.luongdinh.apigateway.ApiGatewayApplication",
       "projectName": "api-gateway",
       "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ProductServiceApplication<product-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.luongdinh.productservice.ProductServiceApplication",
+      "projectName": "product-service",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-CartServiceApplication<cart-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.luongdinh.cartservice.CartServiceApplication",
+      "projectName": "cart-service",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-OrderServiceApplication<order-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.luongdinh.orderservice.OrderServiceApplication",
+      "projectName": "order-service",
+      "args": ""
     }
   ]
 }
